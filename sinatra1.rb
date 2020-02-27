@@ -2,12 +2,12 @@ require 'sinatra'
 
 enable :sessions
 
-post '/hello' do 
-    session[:name] = params[:name]
-    'save the name'
+
+get '/howmany' do 
+    erb :howmany
 end 
 
-get '/greet' do 
-    name = session[:name]
-    "Hello there, #{name}"
+post '/candles' do 
+    @number = params[:count].to_i
+    erb :candles 
 end 

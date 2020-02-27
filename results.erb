@@ -1,0 +1,23 @@
+<html>
+    <body>
+        <form action="/create" method="POST">
+            <input type="text" name="email" placeholder="Email">
+            <input type="password" name="pass" placeholder="password">
+            <input type="submit" value="save">
+        </form>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>EMAIL</th>
+                <th>PASSWORD</th>
+            </tr>
+            <% @user.each do |user| %>
+            <tr>
+                <td><%= user[0]%></td>
+                <td><%= user[1]%></td>
+                <td><%= user[2]%></td>
+            </tr>
+            <% end %>
+        </table>
+    </body>
+</html>
